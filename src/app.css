@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --bg: black;
+  --fg: white;
+  --page-padding: clamp(24px, 5vw, 48px);
+}
+@font-face {
+  font-family: "font-medium";
+  src: url("/fonts/font-medium.woff") format("woff"),
+    url("/fonts/font-medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "font-medium-oblique";
+  src: url("/fonts/font-medium-oblique.woff") format("woff"),
+    url("/fonts/font-medium-oblique.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "font-medium-rotalic";
+  src: url("/fonts/font-medium-rotalic.woff") format("woff"),
+    url("/fonts/font-medium-rotalic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+  transition: background 300ms;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.65em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "font-medium", sans-serif;
+  line-height: 1.3em;
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  /* word-break: break-all; */
+}
+input.chat,
+textarea.chat {
+  background: none;
+  border: 2px solid var(--fg);
+  border-radius: 3px;
+  outline: none;
+  padding: 8px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--fg);
+  background: var(--bg);
+  width: 100%;
+}
+p {
+  margin: 0;
+}
+p a {
+  text-decoration: underline;
+}
+strong,
+b {
+  font-weight: 900;
+}
+img {
+  display: block;
+  width: 100%;
+}
+code {
+  background: var(--fg-lighter);
+}
+blockquote {
+  margin: 0;
+  font-size: 1.3em;
+  line-height: 1.6em;
+}
+
+.icon {
+  cursor: pointer;
+  transform: scale(0.8);
+}
+.icon:hover {
+  filter: brightness(80%);
+}
+/* Transitions */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-long-enter-active,
+.fade-long-leave-active {
+  transition: all 2s ease;
+}
+
+.fade-long-enter-from,
+.fade-long-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active {
+  transition: all 1s ease;
+}
+.slide-enter-from {
+  opacity: 0;
+  transform: translateX(-32px);
+}
+
+.slide-leave-active,
+.slide-leave-to {
+  opacity: 0;
+}
+
+/* Animations */
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-10%);
+    animationtimingfunction: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animationtimingfunction: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scale(1);
+    animationtimingfunction: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: scale(1.025);
+    animationtimingfunction: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1.2);
+  }
+
+  25% {
+    transform: scale(0.7);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.debug {
+  border: 1px solid pink;
+}
+.debug > * {
+  border: 1px solid red;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.075em;
+  line-height: 1.5em;
+  color: var(--fgdark);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background: var(--fgdark);
+  height: 2px;
+  outline: none;
+  margin: 2em 0;
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  input[type="range"] {
+    width: 100%;
+  }
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border: none;
+  border-radius: 1000px;
+  cursor: pointer;
+  background: var(--fg);
+  transition: all 0.1s;
+}
+
+@media (max-width: 800px) {
+  input[type="range"]::-webkit-slider-thumb {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.05);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(1.1);
+}
+
+input[type="text"] {
+  background: white;
+  border: none;
+  border: 2px solid var(--fg);
+  border-radius: 3px;
+  outline: none;
+  padding: 3px 6px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--fg);
+  background: var(--bg);
+}

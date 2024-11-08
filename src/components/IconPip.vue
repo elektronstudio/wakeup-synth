@@ -1,0 +1,31 @@
+<template>
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon"
+  >
+    <rect
+      x="1"
+      y="2.5"
+      width="18"
+      height="15"
+      rx="3"
+      stroke="currentColor"
+      stroke-width="1"
+      stroke-linejoin="round"
+    />
+    <rect
+      x="8"
+      y="9"
+      width="8"
+      height="6"
+      rx="1"
+      stroke="currentColor"
+      stroke-width="1.5"
+      stroke-linejoin="round"
+    />
+  </svg>
+</template>
